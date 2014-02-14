@@ -42,11 +42,7 @@
 }
 
 /* Apply these base styles to all icons */
-.icon-ghost:before, 
-.icon-feed:before, 
-.icon-twitter:before, 
-.icon-google-plus:before, 
-.icon-facebook:before {
+.icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
     font-family: 'icons';
     speak: none;
     font-style: normal;
@@ -91,21 +87,22 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: 'Noto Serif', serif;
+    font-family: "Courier New", Courier, monospace;
     font-size: 2.0rem;
     line-height: 1.6em;
-    color: #3A4145;
+    color: #B2B6BD;
+    background: #2b303b
 }
 
 ::-moz-selection {
-    color: #222;
-    background: #D6EDFF;
+    color: #1c212b;
+    background: #a3be8c;
     text-shadow: none;
 }
 
 ::selection {
-    color: #222;
-    background: #D6EDFF;
+    color: #1c212b;
+    background: #a3be8c;
     text-shadow: none;
 }
 
@@ -114,20 +111,19 @@ h4, h5, h6 {
     text-rendering: optimizeLegibility;
     line-height: 1;
     margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 2px;
+    font-weight: normal;
 }
 
 h1 {
     font-size: 5rem;
     line-height: 1.2em;
-    letter-spacing: -2px;
     text-indent: -3px;
 }
 
 h2 {
     font-size: 4rem;
     line-height: 1.2em;
-    letter-spacing: -1px;
     text-indent: -2px;
 }
 
@@ -148,27 +144,69 @@ h6 {
 }
 
 a {
-    color: #4a4a4a;
+    color: #bf6165;
     transition: color ease 0.3s;
 }
 
 a:hover {
-    color: #57A3E8;
+    color: #a3be8c;
 }
 
 h1 a, h2 a, h3 a,
 h4 a, h5 a, h6 a {
-    color: #50585D;
+    color: #739a99;
 }
 
 
-p, ul, ol, dl {
+p, ul, ol {
     margin: 1.6em 0;
 }
 
 ol ol, ul ul,
 ul ol, ol ul {
     margin: 0.4em 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #424650;
+    margin: 3.2em 0;
+    padding: 0;
+}
+
+blockquote {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0 1.6em -2.2em;
+    padding: 0 0 0 1.6em;
+    border-left: #4f586b 0.4em solid;
+}
+
+blockquote p {
+    margin: 0.8em 0;
+    font-style: italic;
+}
+
+blockquote small {
+    display: inline-block;
+    margin: 0.8em 0 0.8em 1.5em;;
+    font-size:0.9em;
+    color: #ccc;
+}
+
+blockquote small:before { content: '\2014 \00A0'; }
+
+blockquote cite {
+    font-weight:bold;
+}
+
+blockquote cite a { font-weight: normal; }
+
+
+dl {
+    margin: 1.6em 0;
 }
 
 dl dt {
@@ -188,54 +226,17 @@ dl dd {
     margin-bottom: 1em
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #efefef;
-    margin: 3.2em 0;
-    padding: 0;
-}
-
-blockquote {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 1.6em 0 1.6em -2.2em;
-    padding: 0 0 0 1.6em;
-    border-left: #4a4a4a 0.4em solid;
-}
-
-blockquote p {
-    margin: 0.8em 0;
-    font-style: italic;
-}
-
-blockquote small {
-    display: inline-block;
-    margin: 0.8em 0 0.8em 1.5em;
-    font-size:0.9em;
-    color: #ccc;
-}
-
-blockquote small:before { content: '\2014 \00A0'; }
-
-blockquote cite {
-    font-weight:bold;
-}
-
-blockquote cite a { font-weight: normal; }
-
 mark {
     background-color: #ffc336;
 }
 
 code, tt {
     padding: 1px 3px;
-    font-family: Inconsolata, monospace, sans-serif;
+    font-family: "Courier New", Courier, monospace;
     font-size: 0.85em;
-    white-space: pre-wrap;
-    border: 1px solid #E3EDF3;
-    background: #F7FAFB;
+    white-space: pre;
+    border: 1px solid #424a5a;
+    background: #4f586b;
     border-radius: 2px;
 }
 
@@ -243,14 +244,14 @@ pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1.6em 0;
-    border: 1px solid #E3EDF3;
+    border: 1px solid #424a5a;
     width: 100%;
     padding: 10px;
-    font-family: Inconsolata, monospace, sans-serif;
+    font-family: "Courier New", Courier, monospace;
     font-size: 0.9em;
     white-space: pre;
     overflow: auto;
-    background: #F7FAFB;
+    background: #4f586b;
     border-radius: 3px;
 }
 
@@ -294,7 +295,7 @@ table td {
     line-height: 20px;
     text-align: left;
     vertical-align: top;
-    border-top: 1px solid #efefef;
+    border-top: 1px solid #424a5a;
 }
 
 table th { color: #000; }
@@ -314,26 +315,24 @@ table table table { background-color: #fff; }
 
 table tbody > tr:nth-child(odd) > td,
 table tbody > tr:nth-child(odd) > th {
-    background-color: #f6f6f6;
+    background-color: #4f586b;
 }
 
-table.plain tbody > tr:nth-child(odd) > td,
-table.plain tbody > tr:nth-child(odd) > th {
-   background: transparent;
-}
-
-iframe, .fluid-width-video-wrapper {
-    display: block;
-    margin: 1.6em 0;
-}
-
-/* When a video is inside the fitvids wrapper, drop the
-margin on the iframe, cause it breaks stuff. */
-.fluid-width-video-wrapper iframe {
-    margin: 0;
+table.plain {
+    tbody > tr:nth-child(odd) > td,
+    tbody > tr:nth-child(odd) > th {
+        background: transparent;
+    }
 }
 
 
+button, input, select, textarea {
+    background: #4f586b;
+    border: 1px solid #424a5a;
+    color: #B2B6BD;
+    outline-color: #bf6165
+
+}
 /* ==========================================================================
    3. Utilities - These things get used a lot
    ========================================================================== */
@@ -365,29 +364,73 @@ margin on the iframe, cause it breaks stuff. */
    ========================================================================== */
 
 /* Big cover image on the home page */
-.site-head {
+#site-head {
     position: relative;
     display: table;
     width: 100%;
     height: 60%;
     margin-bottom: 5rem;
     text-align: center;
-    color: #fff;
-    background: #303538 no-repeat center center;
+    color: #a0add5;
+    background: #1c212b no-repeat center center;
     background-size: cover;
 }
 
-.blog-logo {
-    text-decoration: none;
+/* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
+   
+#blog-logo {
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid #bf6165;
+
+}
+#blog-logo:before {  
+     width: 100px;
+     height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    content: "";  
+    display: block;  
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0; 
+    background: none; 
+    -moz-transition: background .3s linear;  
+    -webkit-transition: background .3s linear;  
+    -o-transition: background .3s linear;  
+    transition: background .3s linear;  
+    border: 5px solid #bf6165;
+
 }
 
-/* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
-.blog-logo img {
+#blog-logo:hover:before {
+    background: rgba(204,31,39, 0.5);  
+    
+}
+#blog-logo img {
     display: block;
     max-height: 100px;
     width: auto;
-    margin: 0 auto;
     line-height: 0;
+    border-radius: 50%;
+
+}
+
+
+#back {
+    color: rgba(0,0,0,0.2);
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    padding: 6px;
+    font-size: 16px;
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
@@ -395,9 +438,6 @@ margin on the iframe, cause it breaks stuff. */
     margin: 10px 0 10px 0;
     font-size: 5rem;
     letter-spacing: -1px;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.1);
 }
 
 .blog-description {
@@ -405,9 +445,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 1.8rem;
     line-height: 1.5em;
     font-weight: 300;
-    font-family: 'Noto Serif', serif;
     letter-spacing: 0;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -417,14 +455,14 @@ margin on the iframe, cause it breaks stuff. */
     max-width: 700px;
     margin: 4rem auto;
     padding-bottom: 4rem;
-    border-bottom: #EBF2F6 1px solid;
+    border-bottom: #424650 1px solid;
     word-break: break-word;
     hyphens: auto;
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
    just for the lolz and stylepoints. */
-.post:after {
+/*.post:after {
     display: block;
     content: "";
     width: 7px;
@@ -439,7 +477,7 @@ margin on the iframe, cause it breaks stuff. */
     -moz-border-radius: 100%;
     border-radius: 100%;
     box-shadow: #fff 0 0 0 5px;
-}
+}*/
 
 .post-title {
     margin:0;
@@ -458,13 +496,12 @@ margin on the iframe, cause it breaks stuff. */
 .post-meta {
     display: inline-block;
     margin: 0 0 5px 0;
-    font-family: 'Open Sans', sans-serif;
     font-size: 1.5rem;
-    color: #9EABB3;
+    color: #846d8f;
 }
 
 .post-meta a {
-    color: #9EABB3;
+    color: #846d8f;
     text-decoration: none;
 }
 
@@ -534,20 +571,15 @@ margin on the iframe, cause it breaks stuff. */
 /* Insert some mad padding up in the header for better spacing */
 .post-template .post-header {
     padding: 60px 0;
-    text-align: center;
 }
-
-.post-template .blog-title {
-    display: inline-block;
-    padding: 2.5rem 0;
+.post-header #blog-logo:before {
+    margin: 60px auto;
 }
-
 /* Keep large images within the bounds of the post-width */
 .post-content img {
     display: block;
     max-width: 100%;
     margin: 0 auto;
-    height: auto;
 }
 
 /* The author credit area after the post */
@@ -555,7 +587,7 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     margin: 4rem 0 0 0;
     padding: 4rem 0 0 0;
-    border-top: #EBF2F6 1px solid;
+    border-top: #424650 1px solid;
 }
 
 .post-footer h4 {
@@ -590,7 +622,6 @@ margin on the iframe, cause it breaks stuff. */
     display: inline-block;
     margin: 1.4rem 1.6rem 1.6rem 0;
     color: #BBC7CC;
-    text-decoration: none;
 }
 
 .post-footer .share a:hover {
@@ -625,7 +656,7 @@ margin on the iframe, cause it breaks stuff. */
     width: 80%;
     max-width: 700px;
     margin: 4rem auto;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Courier New", Courier, monospace;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
@@ -641,10 +672,11 @@ margin on the iframe, cause it breaks stuff. */
     position: absolute;
     display: inline-block;
     padding: 0 15px;
-    border: #EBF2F6 2px solid;
+    border: #424650 1px solid;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 5px;
     transition: border ease 0.3s;
+    background: #363c4a;
 }
 
 .older-posts {
@@ -674,13 +706,12 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     margin: 8rem 0 0 0;
     padding: 4rem 0;
-    border-top: #EBF2F6 1px solid;
-    font-family: 'Open Sans', sans-serif;
+    border-top: #1a1e27 1px solid;
     font-size: 1.3rem;
     line-height: 1.7em;
     color: #BBC7CC;
     text-align: center;
-    background: #F7FAFB;
+    background: #1c212b;
 }
 
 .site-footer a {
@@ -693,6 +724,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .poweredby .icon-ghost {
+    color: #bf6165;
     font-weight: 700;
     text-decoration: none;
 }
@@ -727,7 +759,7 @@ margin on the iframe, cause it breaks stuff. */
     color: #D2DEE3;
     font-size: 10px;
     position: absolute;
-    top: 9px;
+    top: 2px;
     left: 9px;
     font-weight: bold;
     transition: color 0.5s ease;
@@ -750,9 +782,10 @@ margin on the iframe, cause it breaks stuff. */
     padding: 4px 8px 5px 8px;
     position:absolute;
     top: -23px;
-    left: -21px;
+    left: -23px;
     color: rgba(255,255,255,0.9);
     font-size: 1.1rem;
+    font-weight: bold;
     line-height: 1em;
     text-align: center;
     background: #50585D;
@@ -793,7 +826,7 @@ margin on the iframe, cause it breaks stuff. */
         margin-left: 0;
     }
 
-    .site-head {
+    #site-head {
         -webkit-box-sizing: border-box; 
         -moz-box-sizing: border-box;
         box-sizing: border-box; 
@@ -824,6 +857,9 @@ margin on the iframe, cause it breaks stuff. */
     .post-template .post-header {
         padding: 40px 0;
     }
+    .post-header #blog-logo:before {
+        margin: 40px auto        
+    }
 
     h1 {
         font-size: 4.8rem;
@@ -851,10 +887,16 @@ margin on the iframe, cause it breaks stuff. */
 
 @media only screen and (max-width: 500px) {
 
-    .blog-logo img {
+    #blog-logo img {
         max-height: 80px;
     }
-
+    #blog-logo {
+        width: 80px;
+    }
+    #blog-logo:before {  
+        width: 80px;
+        height: 80px;
+    }
     .inner, 
     .pagination {
         width: auto;
@@ -870,7 +912,7 @@ margin on the iframe, cause it breaks stuff. */
         line-height: 1.6em;
     }
 
-    .site-head {
+    #site-head {
         padding: 10% 0;
     }
 
@@ -904,7 +946,9 @@ margin on the iframe, cause it breaks stuff. */
     .post-template .post-header {
         padding: 30px 0;
     }
-
+    .post-header #blog-logo:before {
+        margin: 30px auto
+    }
     .post-meta {
         font-size: 1.3rem;
     }
@@ -917,7 +961,7 @@ margin on the iframe, cause it breaks stuff. */
     .post-footer .author {
         margin: 0 0 2rem 0;
         padding: 0 0 1.6rem 0;
-        border-bottom: #EBF2F6 1px dashed;
+        border-bottom: #424650 1px dashed;
     }
 
     .post-footer .share {
@@ -944,6 +988,119 @@ margin on the iframe, cause it breaks stuff. */
         font-size: 1.1rem;
     }
 
+}
+/*
+Animate.css - http://daneden.me/animate
+LICENSED UNDER THE  MIT LICENSE (MIT)
+
+Copyright (c) 2012 Dan Eden
+*/
+.animated {
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.animated.hinge {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -ms-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-moz-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -moz-transform: translateY(30px);
+    }
+
+    80% {
+        -moz-transform: translateY(-10px);
+    }
+
+    100% {
+        -moz-transform: translateY(0);
+    }
+}
+
+@-o-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -o-transform: translateY(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -o-transform: translateY(30px);
+    }
+
+    80% {
+        -o-transform: translateY(-10px);
+    }
+
+    100% {
+        -o-transform: translateY(0);
+    }
+}
+
+@keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    80% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    -moz-animation-name: bounceInDown;
+    -o-animation-name: bounceInDown;
+    animation-name: bounceInDown;
 }
 
 /* ==========================================================================
